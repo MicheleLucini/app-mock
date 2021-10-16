@@ -47,7 +47,8 @@
   }
   
   main {
-    max-width: 400px;
+    width: 100%;
+    max-width: 600px;
     margin: 0 auto;
     display: grid;
     grid-gap: 20px;
