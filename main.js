@@ -35,7 +35,7 @@ function goToHome() {
     $headerIcons[i].style.display = "grid";
   }
   $main.innerHTML += title('Home', 'todo');
-  $footer.innerHTML += button('Logout', 'goToLogin()');
+  $main.innerHTML += button('Logout', 'goToLogin()');
 }
 
 
