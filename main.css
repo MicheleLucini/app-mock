@@ -1,17 +1,27 @@
 :root {
     --color-brand-primary: #1565c0;
     --color-brand-secondary: #e3f2fd;
-  }
-  
-  * {
+}
+
+* {
     box-sizing: border-box;
-  }
-  
-  body {
+}
+
+body {
     margin: 0;
-  }
-  
-  #app {
+}
+
+.hidden {
+    visibility: hidden;
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+#app {
     width: 100%;
     min-height: 100vh;
     font-family: Montserrat;
@@ -19,34 +29,36 @@
     grid-template-rows: auto 1fr auto;
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
-  }
-  
-  header {
+}
+
+header {
     height: 50px;
     display: grid;
     grid-template-columns: auto 1fr auto;
     justify-items: center;
     align-items: center;
     /*border-bottom: 1px solid #ccc;*/
-  }
-  header .logo {
+}
+
+header .logo {
     height: 20px;
     margin: 0 20px;
-  }
-  header .icon {
+}
+
+header .icon {
     font-size: 26px;
     height: 100%;
     aspect-ratio: 1;
     display: grid;
     place-items: center;
     color: #000;
-  }
-  header .icon:focus,
-  header .icon:active {
+}
+
+header .icon:focus, header .icon:active {
     background-color: rgba(0, 0, 0, 0.1);
-  }
-  
-  main {
+}
+
+main {
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
@@ -55,38 +67,41 @@
     grid-auto-flow: row;
     align-content: start;
     padding: 20px;
-  }
-  main .title {
+}
+
+main .title {
     margin-bottom: 40px;
-  }
-  main .title h1 {
+}
+
+main .title h1 {
     font-family: Montserrat;
     margin: 0 0 10px;
-  }
-  
-  footer {
+}
+
+footer {
     display: grid;
     grid-gap: 20px;
     grid-auto-flow: row;
     align-content: start;
     padding: 20px 10px;
-  }
-  
-  .frgt-pwd {
+}
+
+.frgt-pwd {
     width: 100%;
     text-align: center;
     font-size: .9rem;
-  }
-  
-  .inp {
+}
+
+.inp {
     position: relative;
     /*margin: auto;*/
     width: 100%;
     border-radius: 3px;
     overflow: hidden;
     font-family: Montserrat;
-  }
-  .inp .label {
+}
+
+.inp .label {
     position: absolute;
     top: 20px;
     left: 12px;
@@ -97,8 +112,9 @@
     transform: translate3d(0, 0, 0);
     transition: all 0.2s ease;
     pointer-events: none;
-  }
-  .inp .focus-bg {
+}
+
+.inp .focus-bg {
     position: absolute;
     top: 0;
     left: 0;
@@ -108,8 +124,9 @@
     z-index: -1;
     transform: scaleX(0);
     transform-origin: left;
-  }
-  .inp input {
+}
+
+.inp input {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -124,38 +141,45 @@
     box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.3);
     color: #000;
     transition: all 0.15s ease;
-  }
-  .inp input:hover {
+}
+
+.inp input:hover {
     background: rgba(0, 0, 0, 0.04);
     box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.5);
-  }
-  .inp input:not(:-moz-placeholder-shown) + .label {
+}
+
+.inp input:not(:-moz-placeholder-shown)+.label {
     color: rgba(0, 0, 0, 0.5);
     transform: translate3d(0, -12px, 0) scale(0.75);
-  }
-  .inp input:not(:-ms-input-placeholder) + .label {
+}
+
+.inp input:not(:-ms-input-placeholder)+.label {
     color: rgba(0, 0, 0, 0.5);
     transform: translate3d(0, -12px, 0) scale(0.75);
-  }
-  .inp input:not(:placeholder-shown) + .label {
+}
+
+.inp input:not(:placeholder-shown)+.label {
     color: rgba(0, 0, 0, 0.5);
     transform: translate3d(0, -12px, 0) scale(0.75);
-  }
-  .inp input:focus {
+}
+
+.inp input:focus {
     background: rgba(0, 0, 0, 0.05);
     outline: none;
     box-shadow: inset 0 -2px 0 var(--color-brand-primary);
-  }
-  .inp input:focus + .label {
+}
+
+.inp input:focus+.label {
     color: var(--color-brand-primary);
     transform: translate3d(0, -12px, 0) scale(0.75);
-  }
-  .inp input:focus + .label + .focus-bg {
+}
+
+.inp input:focus+.label+.focus-bg {
     transform: scaleX(1);
     transition: all 0.1s ease;
-  }
-  
-  .simple-button {
+}
+
+.simple-button {
     font-family: Montserrat, sans-serif;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
@@ -163,13 +187,11 @@
     font-weight: 600;
     /*letter-spacing: 0.1rem;*/
     text-decoration: none;
-  
     height: 48px;
     width: 100%;
     padding: 0 20px;
     cursor: pointer;
     border-radius: 6px;
-  
     display: inline-grid;
     grid-auto-flow: column;
     gap: 5px;
@@ -178,39 +200,39 @@
     justify-content: center;
     box-sizing: border-box;
     vertical-align: middle;
-  
     border: none;
     outline: none;
     user-select: none;
     -webkit-appearance: none;
     overflow: hidden;
-  
     transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
     background-color: var(--color-brand-secondary);
     color: var(--color-brand-primary);
-  }
-  .simple-button > .material-icons-round {
+}
+
+.simple-button>.material-icons-round {
     font-size: 1.2rem;
-  }
-  .simple-button:hover {
-    box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%),
-      0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
-  }
-  .simple-button:active {
-    box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%),
-      0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
-  }
-  
-  .pure-material-checkbox {
+}
+
+.simple-button:hover {
+    box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+}
+
+.simple-button:active {
+    box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+}
+
+.pure-material-checkbox {
     z-index: 0;
     position: relative;
     display: inline-block;
     font-size: 16px;
     line-height: 1.5;
-  }
-  
-  /* Input */
-  .pure-material-checkbox > input {
+}
+
+/* Input */
+
+.pure-material-checkbox>input {
     appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none;
@@ -230,35 +252,39 @@
     transform: scale(1);
     pointer-events: none;
     transition: opacity 0.3s, transform 0.2s;
-  }
-  
-  /* Span */
-  .pure-material-checkbox > span {
+}
+
+/* Span */
+
+.pure-material-checkbox>span {
     display: inline-block;
     width: 100%;
     cursor: pointer;
     padding-left: 32px;
-  }
-  
-  /* Box */
-  .pure-material-checkbox > span::before {
+}
+
+/* Box */
+
+.pure-material-checkbox>span::before {
     content: "";
     display: block;
     position: absolute;
     left: 0;
     box-sizing: border-box;
     margin: 3px 11px 3px 1px;
-    border: solid 2px; /* Safari */
+    border: solid 2px;
+    /* Safari */
     border-color: rgba(0, 0, 0, 0.6);
     border-radius: 2px;
     width: 18px;
     height: 18px;
     vertical-align: top;
     transition: border-color 0.2s, background-color 0.2s;
-  }
-  
-  /* Checkmark */
-  .pure-material-checkbox > span::after {
+}
+
+/* Checkmark */
+
+.pure-material-checkbox>span::after {
     content: "";
     display: block;
     position: absolute;
@@ -270,76 +296,75 @@
     border-right: none;
     border-top: none;
     transform: translate(3px, 4px) rotate(-45deg);
-  }
-  
-  /* Checked, Indeterminate */
-  .pure-material-checkbox > input:checked,
-  .pure-material-checkbox > input:indeterminate {
+}
+
+/* Checked, Indeterminate */
+
+.pure-material-checkbox>input:checked, .pure-material-checkbox>input:indeterminate {
     background-color: var(--color-brand-primary);
-  }
-  
-  .pure-material-checkbox > input:checked + span::before,
-  .pure-material-checkbox > input:indeterminate + span::before {
+}
+
+.pure-material-checkbox>input:checked+span::before, .pure-material-checkbox>input:indeterminate+span::before {
     border-color: var(--color-brand-primary);
     background-color: var(--color-brand-primary);
-  }
-  
-  .pure-material-checkbox > input:checked + span::after,
-  .pure-material-checkbox > input:indeterminate + span::after {
+}
+
+.pure-material-checkbox>input:checked+span::after, .pure-material-checkbox>input:indeterminate+span::after {
     border-color: white;
-  }
-  
-  .pure-material-checkbox > input:indeterminate + span::after {
+}
+
+.pure-material-checkbox>input:indeterminate+span::after {
     border-left: none;
     transform: translate(4px, 3px);
-  }
-  
-  /* Hover, Focus */
-  .pure-material-checkbox:hover > input {
+}
+
+/* Hover, Focus */
+
+.pure-material-checkbox:hover>input {
     opacity: 0.04;
-  }
-  
-  .pure-material-checkbox > input:focus {
+}
+
+.pure-material-checkbox>input:focus {
     opacity: 0.12;
-  }
-  
-  .pure-material-checkbox:hover > input:focus {
+}
+
+.pure-material-checkbox:hover>input:focus {
     opacity: 0.16;
-  }
-  
-  /* Active */
-  .pure-material-checkbox > input:active {
+}
+
+/* Active */
+
+.pure-material-checkbox>input:active {
     opacity: 1;
     transform: scale(0);
     transition: transform 0s, opacity 0s;
-  }
-  
-  .pure-material-checkbox > input:active + span::before {
+}
+
+.pure-material-checkbox>input:active+span::before {
     border-color: var(--color-brand-primary);
-  }
-  
-  .pure-material-checkbox > input:checked:active + span::before {
+}
+
+.pure-material-checkbox>input:checked:active+span::before {
     border-color: transparent;
     background-color: rgba(0, 0, 0, 0.6);
-  }
-  
-  /* Disabled */
-  .pure-material-checkbox > input:disabled {
+}
+
+/* Disabled */
+
+.pure-material-checkbox>input:disabled {
     opacity: 0;
-  }
-  
-  .pure-material-checkbox > input:disabled + span {
+}
+
+.pure-material-checkbox>input:disabled+span {
     color: rgba(0, 0, 0, 0.38);
     cursor: initial;
-  }
-  
-  .pure-material-checkbox > input:disabled + span::before {
+}
+
+.pure-material-checkbox>input:disabled+span::before {
     border-color: currentColor;
-  }
-  
-  .pure-material-checkbox > input:checked:disabled + span::before,
-  .pure-material-checkbox > input:indeterminate:disabled + span::before {
+}
+
+.pure-material-checkbox>input:checked:disabled+span::before, .pure-material-checkbox>input:indeterminate:disabled+span::before {
     border-color: transparent;
     background-color: currentColor;
-  }
-  
+}
