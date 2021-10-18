@@ -1,6 +1,7 @@
 var $headerIcons = document.getElementsByClassName("icon");
 var $main = document.getElementsByTagName("main")[0];
 var $footer = document.getElementsByTagName("footer")[0];
+var $bottomNav = document.getElementById("bottom_nav");
 
 function clearContent() {
   $main.innerHTML = "";
@@ -17,6 +18,7 @@ function goToLogin() {
   $main.innerHTML += '<label for="pwd" class="inp"><input type="password" id="pwd" placeholder="&nbsp;"><span class="label">Password</span><span class="focus-bg"></span></label>';
   $main.innerHTML += button('Accedi', 'goToInformativa()');
   $footer.innerHTML += '<span class="frgt-pwd">Ho dimenticato la password</span>';
+  $bottomNav.style.display = "none";
 }
 
 function goToInformativa() {
@@ -36,6 +38,7 @@ function goToHome() {
   }
   $main.innerHTML += title('Home', 'todo');
   $main.innerHTML += button('Logout', 'goToLogin()');
+  $bottomNav.style.display = "grid";
 }
 
 
