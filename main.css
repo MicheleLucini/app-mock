@@ -121,12 +121,15 @@ footer {
     display: grid;
     place-items: center;
     align-content: center;
-    filter: invert(48%) sepia(1%) saturate(268%) hue-rotate(8deg) brightness(96%) contrast(95%);
 }
 
 #bottom_nav>div span {
     font-size: 26px;
     filter: invert(48%) sepia(1%) saturate(268%) hue-rotate(8deg) brightness(96%) contrast(95%);
+}
+
+#bottom_nav>div.active span {
+    filter: invert(27%) sepia(50%) saturate(2569%) hue-rotate(196deg) brightness(95%) contrast(90%);
 }
 
 #bottom_nav>div label {
@@ -135,16 +138,12 @@ footer {
     color: #777;
 }
 
-#bottom_nav>div:focus, #bottom_nav>div:active {
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
-#bottom_nav>div.active span {
-    filter: invert(27%) sepia(50%) saturate(2569%) hue-rotate(196deg) brightness(95%) contrast(90%);
-}
-
 #bottom_nav>div.active label {
     color: var(--color-brand-primary);
+}
+
+#bottom_nav>div:focus, #bottom_nav>div:active {
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .frgt-pwd {
