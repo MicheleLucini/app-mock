@@ -57,7 +57,7 @@ header {
 }
 
 header .logo {
-    height: 20px;
+    height: 24px;
     margin: 0 20px;
 }
 
@@ -67,7 +67,7 @@ header .icon {
     aspect-ratio: 1;
     display: grid;
     place-items: center;
-    color: #000;
+    color: #777;
 }
 
 header .icon:focus, header .icon:active {
@@ -90,6 +90,10 @@ main .title {
 }
 
 main .title h1 {
+    font-size: 1.5rem;
+}
+
+main .title h1 {
     font-family: Montserrat;
     margin: 0 0 10px;
 }
@@ -105,28 +109,42 @@ footer {
 #bottom_nav {
     height: 50px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     justify-items: center;
     align-items: center;
     border-top: 1px solid #ccc;
 }
 
-#bottom_nav span {
-    font-size: 26px;
+#bottom_nav>div {
     height: 100%;
     width: 100%;
-    /* aspect-ratio: 1; */
     display: grid;
     place-items: center;
+    align-content: center;
     filter: invert(48%) sepia(1%) saturate(268%) hue-rotate(8deg) brightness(96%) contrast(95%);
 }
 
-#bottom_nav span:focus, #bottom_nav span:active {
+#bottom_nav>div span {
+    font-size: 26px;
+    filter: invert(48%) sepia(1%) saturate(268%) hue-rotate(8deg) brightness(96%) contrast(95%);
+}
+
+#bottom_nav>div label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #777;
+}
+
+#bottom_nav>div:focus, #bottom_nav>div:active {
     background-color: rgba(0, 0, 0, 0.1);
 }
 
-#bottom_nav span.active {
+#bottom_nav>div.active span {
     filter: invert(27%) sepia(50%) saturate(2569%) hue-rotate(196deg) brightness(95%) contrast(90%);
+}
+
+#bottom_nav>div.active label {
+    color: var(--color-brand-primary);
 }
 
 .frgt-pwd {

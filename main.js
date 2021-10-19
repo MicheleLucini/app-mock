@@ -36,8 +36,8 @@ function goToHome() {
   for (var i = $headerIcons.length; i--;) {
     $headerIcons[i].style.display = "grid";
   }
-  $main.innerHTML += title('Home', 'todo');
-  $main.innerHTML += button('Logout', 'goToLogin()');
+  $main.innerHTML += title('Timbrature', 'Queste sono le tue timbrature');
+  // $main.innerHTML += button('Logout', 'goToLogin()');
   $bottomNav.style.display = "grid";
 }
 
