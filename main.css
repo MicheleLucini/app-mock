@@ -59,6 +59,7 @@ header .icon {
     display: grid;
     place-items: center;
     color: #777;
+    border-radius: 50%;
 }
 
 header .icon:focus, header .icon:active {
