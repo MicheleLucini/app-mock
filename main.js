@@ -5,6 +5,7 @@ var $bottomNav = document.getElementById("bottom_nav");
 var $btnTimbrature = document.getElementById("btnTimbrature");
 var $btnRichieste = document.getElementById("btnRichieste");
 var $btnDocumenti = document.getElementById("btnDocumenti");
+var $btnUserSettings = document.getElementById("btnUserSettings");
 
 function clearContent() {
   $main.innerHTML = "";
@@ -15,6 +16,7 @@ function changeActiveBtnBottom(btnToActivate) {
   $btnTimbrature.classList.remove("active");
   $btnRichieste.classList.remove("active");
   $btnDocumenti.classList.remove("active");
+  $btnUserSettings.classList.remove("active");
   btnToActivate.classList.add("active");
 }
 
@@ -61,6 +63,12 @@ function goToDocumenti() {
   clearContent();
   $main.innerHTML += title('Documenti', 'Qui raccogliamo tutti i tuoi documenti');
   changeActiveBtnBottom($btnDocumenti);
+}
+
+function goToUserSettings() {
+  clearContent();
+  $main.innerHTML += title('Impostazioni utente', 'Qui puoi modificare modificare la configurazione dell\'app');
+  changeActiveBtnBottom($btnUserSettings);
 }
 
 function title(title, subtitle) {
