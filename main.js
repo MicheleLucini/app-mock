@@ -48,6 +48,7 @@ function goToTimbrature() {
   for (var i = $headerIcons.length; i--;) {
     $headerIcons[i].style.display = "grid";
   }
+  $main.innerHTML += floatingButton("add_location", "Timbra");
   $main.innerHTML += title('Timbrature', 'Queste sono le tue timbrature');
   $bottomNav.style.display = "grid";
   changeActiveBtnBottom($btnTimbrature);
@@ -83,5 +84,8 @@ function checkBox(text) {
   return '<label class="pure-material-checkbox"><input type="checkbox"><span>' + text + "</span></label>";
 }
 
+function floatingButton(icon, text, onclick) {
+  return '<button class="floating-button" onclick="' + onclick + '"><span class="material-icons-outlined">' + icon + '</span>' + text + '</button>';
+}
 
 goToLogin();
