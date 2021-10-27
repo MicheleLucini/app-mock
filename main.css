@@ -32,19 +32,24 @@ body {
     min-height: 100vh;
     font-family: Montserrat;
     display: grid;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: 1fr auto;
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
 }
 
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     height: 50px;
     display: grid;
     grid-template-columns: auto auto;
     justify-content: space-between;
     justify-items: center;
     align-items: center;
-    /*border-bottom: 1px solid #ccc;*/
+    background-color: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(5px);
 }
 
 header .logo {
@@ -68,7 +73,7 @@ header .icon:focus, header .icon:active {
 
 header .icon.active {
     color: var(--color-brand-primary);
-    background-color: var(--color-brand-secondary);
+    /* background-color: var(--color-brand-secondary); */
     border-radius: 12px;
 }
 
@@ -80,11 +85,11 @@ main {
     grid-gap: 20px;
     grid-auto-flow: row;
     align-content: start;
-    padding: 20px;
+    padding: 70px 20px 20px;
 }
 
 main .title {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 main .title h1 {
@@ -96,6 +101,21 @@ main .title h1 {
     margin: 0 0 10px;
 }
 
+main>*:not(.modal-overlay) {
+    animation: a-slide-up 0.4s ease
+}
+
+@keyframes a-slide-up {
+    0% {
+        opacity: 0;
+        transform: translateY(4px)
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
 footer {
     display: grid;
     grid-gap: 20px;
@@ -104,7 +124,15 @@ footer {
     padding: 20px 10px;
 }
 
+footer:empty {
+    padding: 0 0 80px;
+}
+
 #bottom_nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
     height: 50px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -149,6 +177,79 @@ footer {
     text-align: center;
     font-size: .9rem;
 }
+
+.timbrature {
+    display: grid;
+}
+
+.timbrature>h5 {
+    margin: 0 0 8px;
+}
+
+.timbratura {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 0 12px;
+    padding: 8px 0;
+}
+
+.timbratura>.line-connection {
+    grid-column: 1;
+    grid-row: 1/3;
+    display: grid;
+    justify-self: center;
+    height: calc(100% + 16px);
+    width: 4px;
+    background-color: var(--color-brand-primary);
+}
+
+.timbratura.presenza.in>.line-connection {
+    background: linear-gradient(0deg, var(--color-brand-primary) 50%, transparent 50%);
+}
+
+.timbratura.presenza.out>.line-connection {
+    background: linear-gradient(0deg, transparent 50%, var(--color-brand-primary) 50%);
+}
+
+.timbratura>.icon {
+    grid-column: 1;
+    grid-row: 1/3;
+    display: grid;
+    place-items: center;
+    align-self: center;
+    aspect-ratio: 1;
+    height: 30px;
+    border: 3px solid black;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.timbratura.presenza>.icon {
+    border-color: var(--color-brand-primary);
+    background-color: var(--color-brand-primary);
+    color: white;
+}
+
+.timbratura>.icon>span {
+    font-size: 22px;
+}
+
+.timbratura>.primary {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #000;
+}
+
+.timbratura>.secondary {
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 0.8rem;
+    color: #555;
+}
+
+/* Input */
 
 .inp {
     position: relative;
@@ -293,15 +394,15 @@ footer {
     font-weight: 600;
     text-decoration: none;
     height: 52px;
-    padding: 0 20px;
+    padding: 0 18px;
     cursor: pointer;
-    border-radius: 16px;
-    bottom: 74px;
-    right: 12px;
+    border-radius: 26px;
+    bottom: 64px;
+    right: 8px;
     display: inline-grid;
     grid-auto-flow: column;
     gap: 5px;
-    position: absolute;
+    position: fixed;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;

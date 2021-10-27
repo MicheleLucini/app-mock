@@ -50,6 +50,19 @@ function goToTimbrature() {
   }
   $main.innerHTML += floatingButton("add_location", "Timbra");
   $main.innerHTML += title('Timbrature', 'Queste sono le tue timbrature');
+  var timbrature = "";
+  timbrature += '<h5>Oggi</h5>';
+  timbrature += timbratura("presenza", "in", "Ufficio INFO-BIT", "8:30");
+  timbrature += timbratura("attivita", "in", "Analisi", "8:36");
+  timbrature += timbratura("attivita", "out", "Analisi", "12:23");
+  timbrature += timbratura("presenza", "out", "Ufficio INFO-BIT", "12:30");
+  timbrature += timbratura("presenza", "in", "Ufficio INFO-BIT", "14:00");
+  timbrature += timbratura("attivita", "in", "Sviluppo", "14:07");
+  timbrature += timbratura("attivita", "out", "Sviluppo", "16:03");
+  timbrature += timbratura("attivita", "in", "Testing", "16:03");
+  timbrature += timbratura("attivita", "out", "Testing", "17:58");
+  timbrature += timbratura("presenza", "out", "Ufficio INFO-BIT", "18:00");
+  $main.innerHTML += '<div class="timbrature">' + timbrature + '</div>';
   $bottomNav.style.display = "grid";
   changeActiveBtnBottom($btnTimbrature);
 }
@@ -86,6 +99,17 @@ function checkBox(text) {
 
 function floatingButton(icon, text, onclick) {
   return '<button class="floating-button" onclick="' + onclick + '"><span class="material-icons-outlined">' + icon + '</span>' + text + '</button>';
+}
+
+function timbratura(tipo, verso, luogo, ora) {
+  var html = "";
+  html += '<div class="timbratura ' + verso + ' ' + tipo + '">';
+  html += '  <div class="line-connection"></div>';
+  html += '  <div class="icon"><span class="material-icons-round">chevron_' + (verso == "in" ? "right" : "left") + '</span></div>';
+  html += '  <span class="primary">' + luogo + '</span>';
+  html += '  <span class="secondary">' + ora + '</span>';
+  html += '</div>';
+  return html;
 }
 
 goToLogin();
