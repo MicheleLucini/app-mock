@@ -139,6 +139,7 @@ footer:empty {
     justify-items: center;
     align-items: center;
     border-top: 1px solid #ccc;
+    background-color: white;
 }
 
 #bottom_nav>div {
