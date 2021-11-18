@@ -48,7 +48,7 @@ function goToTimbrature() {
   for (var i = $headerIcons.length; i--;) {
     $headerIcons[i].style.display = "grid";
   }
-  $main.innerHTML += floatingButton("add_location", "Timbra");
+  $main.innerHTML += floatingButton("add", "Timbra");
   $main.innerHTML += title('Timbrature', 'Queste sono le tue timbrature');
   var timbrature = "";
   timbrature += '<h5>Oggi</h5>';

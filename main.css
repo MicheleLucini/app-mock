@@ -138,8 +138,9 @@ footer:empty {
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
     align-items: center;
-    border-top: 1px solid #ccc;
-    background-color: white;
+    border-top: 1px solid #eee;
+    background-color: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(5px);
 }
 
 #bottom_nav>div {
@@ -194,24 +195,6 @@ footer:empty {
     padding: 8px 0;
 }
 
-.timbratura>.line-connection {
-    grid-column: 1;
-    grid-row: 1/3;
-    display: grid;
-    justify-self: center;
-    height: calc(100% + 16px);
-    width: 4px;
-    background-color: var(--color-brand-primary);
-}
-
-.timbratura.presenza.in>.line-connection {
-    background: linear-gradient(0deg, var(--color-brand-primary) 50%, transparent 50%);
-}
-
-.timbratura.presenza.out>.line-connection {
-    background: linear-gradient(0deg, transparent 50%, var(--color-brand-primary) 50%);
-}
-
 .timbratura>.icon {
     grid-column: 1;
     grid-row: 1/3;
@@ -219,16 +202,30 @@ footer:empty {
     place-items: center;
     align-self: center;
     aspect-ratio: 1;
-    height: 30px;
-    border: 3px solid black;
+    width: 44px;
     border-radius: 50%;
     background-color: white;
 }
 
-.timbratura.presenza>.icon {
-    border-color: var(--color-brand-primary);
-    background-color: var(--color-brand-primary);
-    color: white;
+.timbratura.presenza.in>.icon {
+    background-color: #A5D6A7;
+    color: #219653;
+}
+
+.timbratura.presenza.out>.icon {
+    background-color: #EF9A9A;
+    color: #EB5757;
+}
+
+.timbratura.presenza.out {
+    margin-bottom: 30px;
+}
+
+.timbratura.attivita>.icon {
+    background-color: #90CAF9;
+    color: #0f47a1;
+    aspect-ratio: 2/1;
+    border-radius: 6px;
 }
 
 .timbratura>.icon>span {
